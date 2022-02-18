@@ -35,7 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, curr) => ({price: acc.price + curr.price}));
+// console.log(summedPrice);
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,7 +55,13 @@ const cart = [
 */
 
 //CODE HERE
+function calcFinalPrice(cartTotal, couponValue, tax) {
+    cartTotal *= (tax + 1);
+    cartTotal -= couponValue;
+    return cartTotal;
+}
 
+// console.log(calcFinalPrice(10, 3, .1));
 
 
 //////////////////PROBLEM 3////////////////////
@@ -78,7 +85,12 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+    name (string): customer name
+    id (num): unique identifier
+    numVisits (num): number of times customer has visited restaurant
+    isInactive (bool): returns true if customer has not visited restaurant in last 6 months
+
+    These properties will allow the restaurant to keep track of their customers and know whether or not they should reach out and send them a coupon or something.
 
 */
 
@@ -88,3 +100,10 @@ const cart = [
 */
 
 //CODE HERE
+let customer = {
+    name: "John",
+    id: 1122334,
+    numVisits: 7,
+    isInactive: false,
+};
+console.log(customer);
