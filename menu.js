@@ -31,7 +31,14 @@
 */
 
 //CODE HERE
-
+let pizza = {
+    name: "cheese",
+    price: 10,
+    category: "entree",
+    popularity: 5,
+    ranking: 4,
+    tags: ["cheese", "pizza"],
+};
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,6 +50,7 @@
 */
 
 //CODE HERE
+console.log(pizza.popularity);
 
 
 /*
@@ -53,6 +61,7 @@
 */
 
 //CODE HERE
+console.log(pizza.tags[1]);
 
 
 /*
@@ -63,7 +72,8 @@
 */
 
 //CODE HERE
-
+let {price} = pizza;
+console.log(price);
 
 /*
     Fourth, and last, destructure the category
@@ -73,6 +83,8 @@
 */
 
 //CODE HERE
+let {category} = pizza;
+console.log(category);
 
 
 //////////////////PROBLEM 3////////////////////
@@ -88,7 +100,52 @@
 */
 
 //CODE HERE
+let foodArr = [
+    {
+        name: "cheese pizza",
+        price: 10,
+        category: "entree",
+        popularity: 5,
+        ranking: 4,
+        tags: ["cheese", "pizza"],
+    },
 
+    {
+        name: "pepperoni pizza",
+        price: 11,
+        category: "entree",
+        popularity: 4,
+        ranking: 5,
+        tags: ["pepperoni", "pizza"],
+    },
+
+    {
+        name: "hawaiian pizza",
+        price: 12,
+        category: "entree",
+        popularity: 2,
+        ranking: 3,
+        tags: ["hawaiian", "pizza", "pineapple"],
+    },
+
+    {
+        name: "bread sticks",
+        price: 4,
+        category: "appetizer",
+        popularity: 5,
+        ranking: 5,
+        tags: ["bread", "sticks"],
+    },
+
+    {
+        name: "soda",
+        price: 2,
+        category: "drink",
+        popularity: 4,
+        ranking: 4,
+        tags: ["soda", "coke"],
+    },
+];
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,7 +162,8 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(val => val.tags.includes("pizza"));
+// console.log(filteredFood);
 
 
 
@@ -149,7 +207,11 @@
 */
 
 //CODE HERE
-
+function filterByProperty(property, number, type) {
+    filteredArray = [];
+    filteredArray = foodArr.filter(val => type === "above");
+    return filteredArray;
+};
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +221,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty(foodArr.ranking, 4, "above"));
