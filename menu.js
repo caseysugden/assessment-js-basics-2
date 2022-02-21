@@ -199,7 +199,7 @@ const filteredFood = foodArr.filter(val => val.tags.includes("pizza"));
         if it is, return objects whose value for the given
         property is greater than the `number` passed in
 
-        If the type isn't `below`, return objects whose
+        If the type is `below`, return objects whose
         value for the given property is less than the 
         `number` passed in
     
@@ -207,18 +207,35 @@ const filteredFood = foodArr.filter(val => val.tags.includes("pizza"));
 */
 
 //CODE HERE
+// function filterByProperty(property, number, type) {
+//     let filteredArray = foodArr.filter(val => type === "above");
+//     return filteredArray;
+// };
+
 function filterByProperty(property, number, type) {
-    filteredArray = [];
-    filteredArray = foodArr.filter(val => type === "above");
-    return filteredArray;
+    let filteredArray = foodArr.filter(val => {
+        if (type === "above") {
+            if (val[property] > number) {
+                return true;
+            };
+        };
+
+        if (type === "below") {
+            if (val[property] < number) {
+                return true;
+            }
+        }
+    });
+    return filteredArray;    
 };
 
 /*
     Invoke the `filterByProperty` function passing
     in a value for each paramter.
-
+    
     You'll have to console.log to see the filtered array
-*/
-
-//CODE HERE
-console.log(filterByProperty(foodArr.ranking, 4, "above"));
+    */
+   
+   //CODE HERE
+   console.log(filterByProperty('ranking', 4, "above"));
+//    console.log(filterByProperty('ranking', 4, "below"));
